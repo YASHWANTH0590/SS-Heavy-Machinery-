@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spare Parts | SS Traders</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>:root{
+        --primary:#0B4A91;
+        --primary-dark:#08356A;
+        --navy:#022348;
+        --secondary:#F5F6F8;
+        --text:#222222;
+        --text-light:#666666;
+        --white:#ffffff;
+        --border:#e6e6e6;
+        --shadow:0 8px 25px rgba(0,0,0,.08);
+    }*{
+    margin:0px;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Playfair Display';
+}body{ background:#fff; color:#222; overflow-x:hidden; }.nav-links a:hover, .nav-links a.active{ color:#7EB3FF; }.btn{
+        background:#0B4A91; color:#fff; padding:14px 30px;
+        border-radius:4px; text-decoration:none; font-weight:600;
+        transition:.3s; font-family:'Poppins',sans-serif; font-size:14px;
+        border:none; cursor:pointer;
+    }.btn:hover{ background:#08356A; }.price-value{
+    font-size:14px;
+    font-family:'Poppins',sans-serif;
+    color:#0B4A91;
+    font-weight:600;
+    margin:8px 0 20px;
+}#priceRange{
+    width:100%;
+    accent-color:#0B4A91;
+    cursor:pointer;
+}
+
+/* ===== PAGE BANNER (matches products.html) ===== */
+.page-banner{
+    height:430px;
+    background:linear-gradient(90deg, rgba(3,15,40,.92) 0%, rgba(6,25,60,.75) 35%, rgba(6,25,60,.35) 65%, rgba(6,25,60,.05) 100%),url("images/spare-hero.jpg") center/cover;
+    display:flex;
+    align-items:center;
+    padding:0 8%;
+    color:#fff;
+    position:relative;
+}
+
+.banner-content{max-width:600px}
+
+.breadcrumb{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:20px;
+    font-family:'Poppins',sans-serif;
+    font-size:15px;
+}
+
+.breadcrumb a{
+    color:#ffffff;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.breadcrumb a:hover{
+    color:#7EB3FF;
+}
+
+.breadcrumb span{
+    color:#ffffff;
+}
+
+.banner-content h1{
+    font-size:60px;
+    margin-bottom:20px;
+    text-transform:uppercase;
+}
+
+.banner-content p.hero-text{
+    max-width:600px;
+    font-size:18px;
+    line-height:1.8;
+    color:#f1f1f1;
+    font-family:'Poppins',sans-serif;
+}
+
+@media(max-width:768px){
+
+    .breadcrumb{
+        font-size:14px;
+        margin-bottom:15px;
+    }
+
+    .banner-content h1{
+        font-size:38px;
+    }
+
+    .page-banner{
+        height:auto;
+        min-height:480px;
+        background:linear-gradient(180deg, rgba(3,15,40,.55) 0%, rgba(3,15,40,.75) 55%, rgba(3,15,40,.92) 100%),url("images/spare-hero.jpg") 80% 30%/cover;
+        padding:40px 6% 45px;
+        align-items:flex-start;
+    }
+
+    .banner-content{
+        max-width:100%;
+        padding-top:20px;
+    }
+
+}
+/* ===== END PAGE BANNER ===== */
+
+.section-title{ text-align:center; margin:50px 0 30px; padding:0 15px; }.section-title h2{
+        font-family:'Playfair Display', serif;
+        font-size:32px; font-weight:700; color:#0B4A91;
+        text-transform:uppercase; letter-spacing:1px;
+        position:relative; display:inline-block; padding-bottom:15px;
+    }.section-title h2::after{
+        content:""; position:absolute; left:50%; bottom:0;
+        transform:translateX(-50%); width:80px; height:4px;
+        background:#0B4A91; border-radius:20px;
+    }.section-title h2::before{
+        content:""; position:absolute; left:50%; bottom:-8px;
+        transform:translateX(-50%); width:14px; height:14px;
+        background:#ffffff; border:3px solid #0B4A91; border-radius:50%;
+    }.product-menu{
+        display:flex; justify-content:center; gap:12px;
+        padding:25px 6%; background:#F5F6F8;
+        flex-wrap:wrap; border-bottom:1px solid #e6e6e6;
+    }.menu-item{
+        display:flex; align-items:center; gap:8px;
+        padding:10px 22px; border-radius:4px;
+        text-decoration:none; color:#444;
+        font-size:14px; font-weight:600; font-family:'Poppins',sans-serif;
+        border:2px solid #ddd; background:#fff; transition:.3s; cursor:pointer;
+    }.menu-item:hover, .menu-item.active{
+        background:#0B4A91; color:#fff; border-color:#0B4A91;
+    }.menu-item i{ font-size:16px; }.products-layout{
+    display:flex;
+    align-items:flex-start;
+    gap:30px;
+    max-width:1400px;
+    margin:40px auto;
+    padding:0 20px;
+}.filter-sidebar{
+    width:280px;
+    min-width:280px;
+    background:#fff;
+    border:1px solid #ddd;
+    border-radius:10px;
+    padding:20px;
+    position:sticky;
+    top:100px;
+    height:fit-content;
+    display:none;
+}.filter-sidebar.show{
+    display:block;
+}.filter-toggle-btn{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    background:#0B4A91;
+    color:#fff;
+    border:none;
+    padding:12px 22px;
+    border-radius:6px;
+    font-size:14px;
+    font-weight:600;
+    font-family:'Poppins',sans-serif;
+    cursor:pointer;
+    margin:0 auto 25px 6%;
+    transition:.3s;
+}.filter-toggle-btn:hover{
+    background:#08356A;
+}.filter-toggle-btn i{
+    font-size:13px;
+}.filter-sidebar h3{
+        font-size:20px; font-weight:700; color:#022348;
+        margin-bottom:20px; padding-bottom:12px;
+        border-bottom:2px solid #0B4A91;
+    }.filter-sidebar h4{
+        font-size:14px; font-weight:700; color:#444;
+        text-transform:uppercase; letter-spacing:1px;
+        margin:20px 0 12px; font-family:'Poppins',sans-serif;
+    }.filter-sidebar label{
+        display:flex; align-items:center; gap:10px;
+        font-size:14px; color:#555; padding:7px 0;
+        cursor:pointer; font-family:'Poppins',sans-serif;
+    }.filter-sidebar input[type="checkbox"]{ accent-color:#0B4A91; width:16px; height:16px; }.filter-sidebar .btn{ width:100%; margin-top:20px; text-align:center; display:block; padding:12px; }.product-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}.product-box{
+        background:#fff;
+        border-radius:10px;
+        overflow:hidden;
+        box-shadow:0 6px 18px rgba(0,0,0,0.08);
+        border:1px solid #e8e8e8;
+        transition:all .35s ease;
+    }.product-box:hover{ transform:translateY(-6px); box-shadow:0 16px 30px rgba(0,0,0,0.14); }.product-box img{ width:100%; height:190px; object-fit:cover; display:block; }.product-details{ padding:18px; }.badge{
+        display:inline-block;
+        background:#0B4A91; color:#fff;
+        font-size:11px; font-weight:700; letter-spacing:1px;
+        padding:4px 10px; border-radius:3px;
+        font-family:'Poppins',sans-serif;
+        margin-bottom:10px;
+    }.product-details h3{
+        font-size:18px; font-weight:700; color:#222;
+        margin-bottom:10px; font-family:'Playfair Display',serif;
+    }.specs{
+        display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px;
+    }.specs span{
+        font-size:12px; color:#666; display:flex; align-items:center;
+        gap:5px; font-family:'Poppins',sans-serif;
+    }.specs i{ color:#0B4A91; }.price{
+        font-size:20px; font-weight:800; color:#022348;
+        margin-bottom:14px; font-family:'Poppins',sans-serif;
+    }.view-details{
+        display:inline-block; padding:10px 22px;
+        background:#0B4A91; color:#fff;
+        text-decoration:none; font-size:13px; font-weight:600;
+        border-radius:4px; transition:.3s; font-family:'Poppins',sans-serif;
+    }.view-details:hover{ background:#08356A; }.pagination{
+        display:flex; justify-content:center; gap:8px;
+        padding:30px 6% 40px;
+    }.pagination a{
+        width:40px; height:40px;
+        display:flex; align-items:center; justify-content:center;
+        border:2px solid #ddd; border-radius:4px;
+        text-decoration:none; color:#444; font-weight:600;
+        font-family:'Poppins',sans-serif; font-size:14px; transition:.3s;
+    }.pagination a:hover, .pagination a.active{
+        background:#0B4A91; border-color:#0B4A91; color:#fff;
+    }.products-cta{
+        background:#0B4A91;
+        padding:40px 8%;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:30px;
+        flex-wrap:wrap;
+    }.cta-left{ display:flex; align-items:center; gap:20px; }.cta-icon{
+        width:60px; height:60px; border-radius:50%;
+        background:rgba(255,255,255,0.15);
+        display:flex; align-items:center; justify-content:center;
+        font-size:26px; color:#fff; flex-shrink:0;
+    }.cta-left h2{ color:#fff; font-size:22px; margin-bottom:6px; }.cta-left p{ color:#c8daff; font-size:14px; font-family:'Poppins',sans-serif; }.cta-btn{
+        background:#fff; color:#0B4A91;
+        padding:14px 28px; border-radius:4px;
+        text-decoration:none; font-weight:700;
+        font-family:'Poppins',sans-serif; font-size:14px;
+        display:flex; align-items:center; gap:10px; transition:.3s;
+        white-space:nowrap;
+    }.cta-btn:hover{ background:#e8eef8; }.footer{ background:#071424; color:#fff; padding:60px 0 0; }.footer-grid{
+        width:90%; max-width:1200px; margin:auto;
+        display:grid; grid-template-columns:repeat(4,1fr); gap:40px;
+    }.footer-logo h2{ font-size:22px; font-weight:700; color:#fff; margin-bottom:4px; }.footer-logo span{ font-size:12px; color:#aac4e8; letter-spacing:1px; font-family:'Poppins',sans-serif; }.footer-box p{ font-size:14px; color:#aac4e8; line-height:1.8; margin-top:14px; font-family:'Poppins',sans-serif; }.footer-box h3{ font-size:17px; font-weight:700; color:#fff; margin-bottom:18px; }.footer-box ul{ list-style:none; }.footer-box ul li{ margin-bottom:10px; }.footer-box ul li a{
+        color:#aac4e8; text-decoration:none; font-size:14px;
+        font-family:'Poppins',sans-serif; transition:.3s;
+    }.footer-box ul li a:hover{ color:#fff; }.footer-contact li{
+        display:flex; gap:12px; align-items:flex-start;
+        color:#aac4e8; font-size:14px; font-family:'Poppins',sans-serif;
+        margin-bottom:12px; list-style:none;
+    }.footer-contact li i{ color:#7EB3FF; margin-top:3px; flex-shrink:0; }.footer-social{ display:flex; gap:10px; margin-top:18px; }.footer-social a{
+        width:36px; height:36px; border-radius:50%;
+        background:rgba(255,255,255,0.1);
+        display:flex; align-items:center; justify-content:center;
+        color:#fff; font-size:14px; text-decoration:none; transition:.3s;
+    }.footer-social a:hover{ background:#0B4A91; }.footer-bottom{
+        margin-top:40px; padding:18px 6%;
+        border-top:1px solid rgba(255,255,255,.12);
+        text-align:center; font-size:13px; color:#7a9fc0;
+        font-family:'Poppins',sans-serif;
+    }.products-area{
+    flex:1;
+    width:100%;
+}@media(max-width:768px) {.products-content h1{ font-size:34px; }.products-layout{ grid-template-columns:1fr; padding:20px; }.product-grid{ grid-template-columns:repeat(2,1fr); gap:16px; }.product-box img{ height:140px; }.footer-grid{ grid-template-columns:1fr; gap:30px; }.products-cta{ flex-direction:column; text-align:center; }.cta-left{ flex-direction:column; text-align:center; }}@media(max-width:480px) {.product-grid{ grid-template-columns:1fr; }.product-menu{ gap:8px; }.menu-item{ padding:8px 14px; font-size:13px; }}@media(max-width:991px) {.products-layout{
+        flex-direction:column;
+    }.filter-sidebar{
+        width:100%;
+        min-width:100%;
+        position:static;
+        margin-bottom:25px;
+    }.product-grid{
+        grid-template-columns:repeat(2,1fr);
+    }}@media(max-width:576px) {.product-grid{
+        grid-template-columns:1fr;
+    }}</style>
+    <link rel="stylesheet" href="css/navbar.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div id="site-navbar"></div>
+
+<!-- HERO / PAGE BANNER (matches products.html) -->
+<section class="page-banner">
+<div class="banner-content">
+
+    <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>&gt;</span>
+        <span>Spare Parts</span>
+    </div>
+
+    <h1>SPARE PARTS</h1>
+
+    <p class="hero-text">We provide a wide range of genuine and high-quality spare parts for all types of heavy machinery. Built to last and tested for maximum performance.</p>
+
+</div>
+
+</section>
+
+<!-- CATEGORY MENU -->
+<section class="product-menu">
+<a class="menu-item active" data-category="all">All</a>
+
+<a class="menu-item" data-category="Engine">Engine</a>
+
+<a class="menu-item" data-category="Hydraulic">Hydraulic</a>
+
+<a class="menu-item" data-category="Transmission">Transmission</a>
+
+<a class="menu-item" data-category="Undercarriage">Undercarriage</a>
+
+<a class="menu-item" data-category="Electrical">Electrical</a>
+
+<a class="menu-item" data-category="Filters">Filters</a>
+</section>
+
+<!-- SECTION TITLE -->
+<div class="section-title"><h2>All Spare Parts</h2></div>
+
+<!-- PRODUCTS LAYOUT -->
+<button type="button" class="filter-toggle-btn" id="filterToggleBtn">
+    <i class="fas fa-sliders-h"></i> Show Filters
+</button>
+
+<section class="products-layout">
+
+   <aside class="filter-sidebar" id="filterSidebar">
+
+    <h3>Filters</h3>
+
+    <!-- Category -->
+    <h4>Category</h4>
+
+    <label><input type="checkbox"> Engine Parts</label>
+    <label><input type="checkbox"> Hydraulic Parts</label>
+    <label><input type="checkbox"> Transmission</label>
+    <label><input type="checkbox"> Undercarriage</label>
+    <label><input type="checkbox"> Electrical</label>
+    <label><input type="checkbox"> Filters</label>
+    <label><input type="checkbox"> Seals &amp; O-Rings</label>
+    <label><input type="checkbox"> Bucket &amp; Teeth</label>
+
+    <!-- Brand -->
+    <h4>Brand</h4>
+
+    <label><input type="checkbox"> CAT</label>
+    <label><input type="checkbox"> Komatsu</label>
+    <label><input type="checkbox"> Volvo</label>
+    <label><input type="checkbox"> JCB</label>
+    <label><input type="checkbox"> Tata Hitachi</label>
+
+    <!-- Condition -->
+    <h4>Condition</h4>
+
+    <label><input type="checkbox"> New</label>
+    <label><input type="checkbox"> Used</label>
+    <label><input type="checkbox"> Refurbished</label>
+
+    <!-- Availability -->
+    <h4>Availability</h4>
+
+    <label><input type="checkbox"> In Stock</label>
+    <label><input type="checkbox"> Ready to Dispatch</label>
+    <label><input type="checkbox"> Coming Soon</label>
+
+    <a href="#" class="btn">Apply Filters</a>
+
+</aside>
+    <!-- PARTS AREA -->
+    <div class="products-area">
+        <div class="product-grid">
+
+            <div class="product-box" data-category="Engine">
+                <img src="images/engine-parts.jpg" alt="Engine Parts">
+                <div class="product-details">
+                    <span class="badge">ENGINE PARTS</span>
+                    <h3>Engine Assembly Parts</h3>
+                    <div class="specs">
+                        <span><i class="fa-solid fa-circle-check"></i> Genuine</span>
+                        <span><i class="fa-solid fa-boxes-stacked"></i> 120+ Parts</span>
+                    </div>
+                    <h2 class="price">On Request</h2>
+                    <a href="contact.html" class="view-details">Enquire Now</a>
+                </div>
+            </div>
+
+            <div class="product-box" data-category="Hydraulic">
+                <img src="images/hydraulic.jpg" alt="Hydraulic Parts">
+                <div class="product-details">
+                    <span class="badge">HYDRAULIC PARTS</span>
+                    <h3>Hydraulic Pump &amp; Cylinder</h3>
+                    <div class="specs">
+                        <span><i class="fa-solid fa-circle-check"></i> Genuine</span>
+                        <span><i class="fa-solid fa-boxes-stacked"></i> 85+ Parts</span>
+                    </div>
+                    <h2 class="price">On Request</h2>
+                    <a href="contact.html" class="view-details">Enquire Now</a>
+                </div>
+            </div>
+
+            <div class="product-box" data-category="Transmission">
+                <img src="images/transmission.jpg" alt="Transmission">
+                <div class="product-details">
+                    <span class="badge">TRANSMISSION</span>
+                    <h3>Transmission &amp; Gearbox</h3>
+                    <div class="specs">
+                        <span><i class="fa-solid fa-circle-check"></i> Genuine</span>
+                        <span><i class="fa-solid fa-boxes-stacked"></i> 95+ Parts</span>
+                    </div>
+                    <h2 class="price">On Request</h2>
+                    <a href="contact.html" class="view-details">Enquire Now</a>
+                </div>
+            </div>
+
+            <div class="product-box" data-category="Undercarriage">
+                <img src="images/undercarriage.jpg" alt="Undercarriage">
+                <div class="product-details">
+                    <span class="badge">UNDERCARRIAGE</span>
+                    <h3>Track &amp; Undercarriage Parts</h3>
+                    <div class="specs">
+                        <span><i class="fa-solid fa-circle-check"></i> Genuine</span>
+                        <span><i class="fa-solid fa-boxes-stacked"></i> 110+ Parts</span>
+                    </div>
+                    <h2 class="price">On Request</h2>
+                    <a href="contact.html" class="view-details">Enquire Now</a>
+                </div>
+            </div>
+
+            <div class="product-box" data-category="Electrical">
+                <img src="images/electrical.jpg" alt="Electrical">
+                <div class="product-details">
+                    <span class="badge">ELECTRICAL</span>
+                    <h3>Electrical Components</h3>
+                    <div class="specs">
+                        <span><i class="fa-solid fa-circle-check"></i> Genuine</span>
+                        <span><i class="fa-solid fa-boxes-stacked"></i> 80+ Parts</span>
+                    </div>
+                    <h2 class="price">On Request</h2>
+                    <a href="contact.html" class="view-details">Enquire Now</a>
+                </div>
+            </div>
+
+            <div class="product-box" data-category="Filters">
+                <img src="images/filter.jpg" alt="Filters">
+                <div class="product-details">
+                    <span class="badge">FILTERS</span>
+                    <h3>Oil, Air &amp; Fuel Filters</h3>
+                    <div class="specs">
+                        <span><i class="fa-solid fa-circle-check"></i> Genuine</span>
+                        <span><i class="fa-solid fa-boxes-stacked"></i> 60+ Parts</span>
+                    </div>
+                    <h2 class="price">On Request</h2>
+                    <a href="contact.html" class="view-details">Enquire Now</a>
+                </div>
+            </div>
+
+            <div class="product-box" data-category="Seals">
+                <img src="images/seals.jpg" alt="Seals & O-Rings">
+                <div class="product-details">
+                    <span class="badge">SEALS &amp; O-RINGS</span>
+                    <h3>Seals, Gaskets &amp; O-Rings</h3>
+                    <div class="specs">
+                        <span><i class="fa-solid fa-circle-check"></i> Genuine</span>
+                        <span><i class="fa-solid fa-boxes-stacked"></i> 70+ Parts</span>
+                    </div>
+                    <h2 class="price">On Request</h2>
+                    <a href="contact.html" class="view-details">Enquire Now</a>
+                </div>
+            </div>
+
+            <div class="product-box" data-category="Bucket">
+                <img src="images/bucket.jpg" alt="Bucket & Teeth">
+                <div class="product-details">
+                    <span class="badge">BUCKET &amp; TEETH</span>
+                    <h3>Bucket, Teeth &amp; Adapters</h3>
+                    <div class="specs">
+                        <span><i class="fa-solid fa-circle-check"></i> Genuine</span>
+                        <span><i class="fa-solid fa-boxes-stacked"></i> 45+ Parts</span>
+                    </div>
+                    <h2 class="price">On Request</h2>
+                    <a href="contact.html" class="view-details">Enquire Now</a>
+                </div>
+            </div>
+
+            <div class="product-box" data-category="Hardware">
+                <img src="images/hardware.jpg" alt="Hardware">
+                <div class="product-details">
+                    <span class="badge">HARDWARE</span>
+                    <h3>Bolts, Nuts &amp; Hardware</h3>
+                    <div class="specs">
+                        <span><i class="fa-solid fa-circle-check"></i> Genuine</span>
+                        <span><i class="fa-solid fa-boxes-stacked"></i> 100+ Parts</span>
+                    </div>
+                    <h2 class="price">On Request</h2>
+                    <a href="contact.html" class="view-details">Enquire Now</a>
+                </div>
+            </div>
+
+            <div class="product-box" data-category="Cooling">
+                <img src="images/cooling.jpg" alt="Cooling System">
+                <div class="product-details">
+                    <span class="badge">COOLING SYSTEM</span>
+                    <h3>Radiator &amp; Cooling Parts</h3>
+                    <div class="specs">
+                        <span><i class="fa-solid fa-circle-check"></i> Genuine</span>
+                        <span><i class="fa-solid fa-boxes-stacked"></i> 55+ Parts</span>
+                    </div>
+                    <h2 class="price">On Request</h2>
+                    <a href="contact.html" class="view-details">Enquire Now</a>
+                </div>
+            </div>
+
+            <div class="product-box" data-category="Undercarriage">
+                <img src="https://www.caterpillar-komatsu.com/wp-content/uploads/2023/09/14241960_1684805177.png" alt="Under Carriage Parts">
+                <div class="product-details">
+                    <span class="badge">UNDERCARRIAGE</span>
+                    <h3>CAT/Komatsu Track Parts</h3>
+                    <div class="specs">
+                        <span><i class="fa-solid fa-circle-check"></i> Good Condition</span>
+                    </div>
+                    <h2 class="price">On Request</h2>
+                    <a href="contact.html" class="view-details">Enquire Now</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="products-cta">
+    <div class="cta-left">
+        <div class="cta-icon"><i class="fa-solid fa-file-lines"></i></div>
+        <div>
+            <h2>CAN'T FIND THE PART YOU NEED?</h2>
+            <p>Let us know your requirement and our team will help you find the right spare part.</p>
+        </div>
+    </div>
+    <a href="contact.html" class="cta-btn">SEND YOUR ENQUIRY <i class="fa-solid fa-arrow-right"></i></a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-grid">
+        <div class="footer-box">
+            <div class="footer-logo">
+                <h2>SS TRADERS</h2>
+                <span>(SALEEM & SONS)</span>
+            </div>
+            <p>Dealers in all kinds of heavy machinery, spare parts, loaders, excavators, dozers and construction equipment.</p>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="spareparts.html">Spare Parts</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-box">
+            <h3>Our Products</h3>
+            <ul>
+                <li><a href="products.html">Excavators</a></li>
+                <li><a href="products.html">Dozers</a></li>
+                <li><a href="products.html">Loaders</a></li>
+                <li><a href="products.html">Used Machinery</a></li>
+                <li><a href="spareparts.html">Spare Parts</a></li>
+            </ul>
+        </div>
+        <div class="footer-box">
+            <h3>Contact Us</h3>
+            <ul class="footer-contact">
+                <li>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>D.No.54-11-10, Plot No.2, Phase-III, APIIC,<br>Autonagar, Vijayawada - 520007</span>
+                </li>
+                <li><i class="fas fa-phone"></i><span>90006 42345, 98481 25153</span></li>
+                <li><i class="fas fa-envelope"></i><span>sstradersvja@yahoo.com</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">© 2026 SS Traders (Saleem & Sons). All Rights Reserved.</div>
+</footer>
+
+<script src="js/navbar.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    var btn = document.getElementById("filterToggleBtn");
+    var sidebar = document.getElementById("filterSidebar");
+    if (!btn || !sidebar) return;
+    btn.addEventListener("click", function () {
+        sidebar.classList.toggle("show");
+        var isOpen = sidebar.classList.contains("show");
+        btn.innerHTML = isOpen
+            ? '<i class="fas fa-times"></i> Hide Filters'
+            : '<i class="fas fa-sliders-h"></i> Show Filters';
+    });
+
+    var menuItems = document.querySelectorAll(".product-menu .menu-item");
+    var boxes = document.querySelectorAll(".product-grid .product-box");
+    menuItems.forEach(function (item) {
+        item.addEventListener("click", function (e) {
+            e.preventDefault();
+            menuItems.forEach(function (m) { m.classList.remove("active"); });
+            item.classList.add("active");
+            var cat = item.getAttribute("data-category");
+            boxes.forEach(function (box) {
+                if (cat === "all" || box.getAttribute("data-category") === cat) {
+                    box.style.display = "";
+                } else {
+                    box.style.display = "none";
+                }
+            });
+        });
+    });
+});
+</script>
+</body>
+</html>

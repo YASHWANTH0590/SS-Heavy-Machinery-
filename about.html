@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS Traders - About Us</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>*{
+    margin:0px;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Playfair Display';
+}body{background:#f5f7fb;color:#222;line-height:1.7}a{text-decoration:none}.nav-links a:hover,
+.nav-links a.active{
+    color:#7EB3FF;
+}.btn{
+    background:#0B4A91;
+    color:#fff;
+    padding:14px 30px;
+    border-radius:4px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}.btn:hover{
+    background:#08356A;
+}.btn-outline{
+    border:2px solid #ffffff;
+    color:#ffffff;
+    padding:12px 28px;
+    text-decoration:none;
+    border-radius:4px;
+    transition:.3s;
+    font-weight:600;
+}.btn-outline:hover{
+    background:#ffffff;
+    color:#022348;
+}.page-banner{
+    height:430px;
+    background:linear-gradient(90deg, rgba(3,15,40,.92) 0%, rgba(6,25,60,.75) 35%, rgba(6,25,60,.35) 65%, rgba(6,25,60,.05) 100%),url("images/about-banner.jpg") center/cover;
+    display:flex;
+    align-items:center;
+    padding:0 8%;
+    color:#fff;
+    position:relative;
+}.banner-content{max-width:600px}.banner-content h1{font-size:60px;margin-bottom:20px}.about-section,
+.founder-section{
+    display:grid;
+    grid-template-columns:350px 1fr 320px;
+    gap:40px;
+    padding:80px 8%;
+    align-items:start;
+}
+
+.founder-image img{
+    width:100%;
+    border-radius:10px;
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+}
+
+.section-subtitle{
+    color:#0B4A91;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:1px;
+    display:inline-block;
+    margin-bottom:10px;
+    position:relative;
+}
+
+.section-subtitle::before{
+    content:"";
+    width:40px;
+    height:3px;
+    background:#0B4A91;
+    display:inline-block;
+    margin-right:10px;
+    vertical-align:middle;
+}
+
+.founder-content h2{
+    font-size:48px;
+    color:#0B4A91;
+    margin:5px 0;
+}
+
+.founder-content h4{
+    font-size:28px;
+    margin-bottom:20px;
+    color:#222;
+}
+
+.founder-text{
+    color:#555;
+    line-height:1.9;
+    text-align:justify;
+}
+
+.founder-quote{
+    background:#eef4ff;
+    border-left:5px solid #0B4A91;
+    padding:25px;
+    margin-top:30px;
+    border-radius:8px;
+}
+
+.founder-quote i{
+    color:#0B4A91;
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.founder-quote p{
+    font-style:italic;
+    color:#444;
+    line-height:1.8;
+}
+
+.founder-quote h5{
+    margin-top:15px;
+    color:#222;
+}
+
+.founder-features{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.feature-box{
+    background:#fff;
+    border-radius:10px;
+    padding:20px;
+    display:flex;
+    gap:18px;
+    align-items:flex-start;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.feature-box i{
+    width:60px;
+    height:60px;
+    background:#EEF4FF;
+    color:#0B4A91;
+    border-radius:12px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:24px;
+    flex-shrink:0;
+}
+
+.feature-box h4{
+    color:#0B4A91;
+    margin-bottom:6px;
+}
+
+.feature-box p{
+    color:#666;
+    font-size:15px;
+    line-height:1.7;
+}
+.breadcrumb{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:20px;
+    font-family:'Poppins',sans-serif;
+    font-size:15px;
+}
+
+.breadcrumb a{
+    color:#ffffff;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.breadcrumb a:hover{
+    color:#7EB3FF;
+}
+
+.breadcrumb span{
+    color:#ffffff;
+}
+
+.banner-content h1{
+    font-size:60px;
+    margin-bottom:20px;
+    text-transform:uppercase;
+}
+
+.banner-content p{
+    max-width:600px;
+    font-size:18px;
+    line-height:1.8;
+    color:#f1f1f1;
+    font-family:'Poppins',sans-serif;
+}
+
+@media(max-width:768px){
+
+    .breadcrumb{
+        font-size:14px;
+        margin-bottom:15px;
+    }
+
+    .banner-content h1{
+        font-size:38px;
+    }
+
+    .page-banner{
+        height:auto;
+        min-height:480px;
+        background:linear-gradient(180deg, rgba(3,15,40,.55) 0%, rgba(3,15,40,.75) 55%, rgba(3,15,40,.92) 100%),url("images/about-banner.jpg") 80% 30%/cover;
+        padding:40px 6% 45px;
+        align-items:flex-start;
+    }
+
+    .banner-content{
+        max-width:100%;
+        padding-top:20px;
+    }
+
+}
+
+
+
+
+.about-section{grid-template-columns:400px 1fr;}
+.about-left h2{font-size:42px;color:#0b3d91;margin-bottom:20px}
+.about-left p{color:#555;margin:0 0 30px;line-height:1.9}
+.timeline-box{background:#fff;padding:30px;border-radius:10px;box-shadow:0 5px 20px rgba(0,0,0,.08)}
+.timeline-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px 25px}
+.timeline-item{display:flex;gap:15px;margin-bottom:0}
+.timeline-icon{
+    width:55px;height:55px;border-radius:50%;
+    background:#0b3d91;color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;font-size:18px;
+}
+.timeline-item h4{color:#0b3d91;margin-bottom:5px;font-size:18px}
+.timeline-item p{color:#666;font-size:14px;margin:0;line-height:1.6}
+.founder-name-box{background:#0b3d91;color:#fff;border-radius:10px;padding:60px 20px;text-align:center;margin-bottom:25px}.founder-name-box h2{font-size:42px}.founder-quote{background:#eef3ff;padding:20px;border-left:5px solid #0b3d91;border-radius:8px;margin-top:20px}.feature-box{background:#fff;padding:22px;border-radius:10px;box-shadow:0 5px 20px rgba(0,0,0,.08);margin-bottom:18px}.feature-box h4{color:#0b3d91}.core-values{padding:70px 8%;background:#fff}.section-title{text-align:center;margin-bottom:40px}.values-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}.value-card{background:#f7f7f7;padding:30px;border-radius:10px;text-align:center}.value-card i{font-size:40px;color:#0b3d91;margin-bottom:15px}.value-card h4{color:#0b3d91;margin-bottom:10px}.value-card p{color:#666;font-size:14px}.about-cta{
+    background:#0b3d91;color:#fff;
+    padding:60px 8%;
+    display:flex;justify-content:space-between;align-items:center;
+    gap:20px;
+}.cta-btn{background:#fff;color:#0b3d91;padding:14px 28px;border-radius:6px;font-weight:700;text-decoration:none}.footer{background:#071424;color:#fff;padding:60px 0 0;}.footer-grid{
+    width:90%;max-width:1200px;margin:auto;
+    display:grid;grid-template-columns:repeat(4,1fr);gap:40px;
+}.footer-logo h2{font-size:22px;font-weight:700;color:#fff;margin-bottom:4px;}.footer-logo span{font-size:12px;color:#aac4e8;letter-spacing:1px;font-family:'Poppins',sans-serif;}.footer-box p{font-size:14px;color:#aac4e8;line-height:1.8;margin-top:14px;font-family:'Poppins',sans-serif;}.footer-box h3{font-size:17px;font-weight:700;color:#fff;margin-bottom:18px;}.footer-box ul{list-style:none;}.footer-box ul li{margin-bottom:10px;}.footer-box ul li a{color:#aac4e8;text-decoration:none;font-size:14px;font-family:'Poppins',sans-serif;transition:.3s;}.footer-box ul li a:hover{color:#fff;}.footer-contact li{
+    display:flex;gap:12px;align-items:flex-start;
+    color:#aac4e8;font-size:14px;font-family:'Poppins',sans-serif;
+    margin-bottom:12px;list-style:none;
+}.footer-contact li i{color:#7EB3FF;margin-top:3px;flex-shrink:0;}.footer-social{display:flex;gap:10px;margin-top:18px;}.footer-social a{
+    width:36px;height:36px;border-radius:50%;
+    background:rgba(255,255,255,0.1);
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-size:14px;text-decoration:none;transition:.3s;
+}.footer-social a:hover{background:#0B4A91;}.footer-bottom{
+    margin-top:40px;padding:18px 6%;
+    border-top:1px solid rgba(255,255,255,.12);
+    text-align:center;font-size:13px;color:#7a9fc0;
+    font-family:'Poppins',sans-serif;
+    
+}@media(max-width:768px) {nav .nav-links{
+        gap:0;
+    }.nav-links li a{
+        display:block;
+        padding:13px 20px;
+        color:#1a2b4a;
+        font-size:14px;
+    }.nav-links li a:hover{
+        background:#0B4A91;
+        color:#fff;
+    }.about-section,
+    .founder-section{
+        grid-template-columns:1fr;
+        gap:30px;
+        padding:50px 20px;
+    }.timeline-grid{
+        grid-template-columns:1fr;
+    }.values-grid{
+        grid-template-columns:repeat(2,1fr);
+    }.about-cta{
+        flex-direction:column;
+        text-align:center;
+    }.banner-content h1{
+        font-size:38px;
+    }.footer-grid{
+        grid-template-columns:1fr;
+        gap:30px;
+    }.footer-box{
+        text-align:left;
+    }.footer-contact li{
+        flex-direction:row;
+        justify-content:flex-start;
+        text-align:left;
+    }.footer-social{
+        justify-content:flex-start;
+    }}@media(max-width:480px) {.values-grid{
+        grid-template-columns:1fr;
+    }.banner-content h1{
+        font-size:30px;
+    }}</style>
+    <link rel="stylesheet" href="css/navbar.css">
+</head>
+<body>
+
+<div id="site-navbar"></div>
+
+<section class="page-banner">
+<div class="banner-content">
+
+    <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>&gt;</span>
+        <span>About Us</span>
+    </div>
+
+    <h1>ABOUT US</h1>
+
+    <p>
+        SS Traders (Saleem & Sons) is a trusted name in the trading of used
+        heavy machinery and genuine spare parts for more than four decades.
+        Our foundation is built on trust, quality and commitment to customers.
+    </p>
+
+</div>
+
+</section>
+
+<section class="about-section">
+
+    <div class="about-left">
+        <span class="section-subtitle">OUR JOURNEY</span>
+        <h2>42 YEARS OF TRUST AND EXCELLENCE</h2>
+        <p>
+            What started as a small shop in 1982 has grown into a reliable and
+            well-recognized name in the industry today. For the past 42 years,
+            we have been serving our customers with honesty, quality products
+            and dedicated service.
+        </p>
+        <a href="contact.html" class="btn">ENQUIRE NOW</a>
+    </div>
+
+    <div class="timeline-box">
+        <div class="timeline-grid">
+
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-calendar-alt"></i></div>
+                <div>
+                    <h4>1982</h4>
+                    <p>Started our journey with a small shop in the industry.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-award"></i></div>
+                <div>
+                    <h4>2010s</h4>
+                    <p>Strengthened our presence with genuine parts and expert service.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-users"></i></div>
+                <div>
+                    <h4>1990s</h4>
+                    <p>Expanded our product range and built strong customer relationships.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-rocket"></i></div>
+                <div>
+                    <h4>2020s</h4>
+                    <p>Continuing our legacy with dedication, trust and innovation.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div>
+                    <h4>2000s</h4>
+                    <p>Established ourselves as a trusted dealer in many local areas.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-trophy"></i></div>
+                <div>
+                    <h4>Today</h4>
+                    <p>42 years of experience, countless satisfied customers and a commitment that continues.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<section class="founder-section">
+
+    <!-- Founder Image -->
+    <div class="founder-image">
+        <img src="images/founder.jpeg" alt="Mr. Saleem">
+    </div>
+
+    <!-- Founder Content -->
+    <div class="founder-content">
+
+        <span class="section-subtitle">OUR FOUNDER</span>
+
+        <h2>MR. SALEEM</h2>
+
+        <h4>(FOUNDER)</h4>
+
+        <p class="founder-text">
+            With hard work, dedication and a clear vision, Mr. Saleem laid the
+            foundation of SS Traders in 1982. His relentless efforts, deep
+            industry knowledge and honest approach have been the driving force
+            behind the success of the company for more than four decades.
+
+            Today, SS Traders is recognized as one of the trusted names in used
+            heavy machinery and genuine spare parts, serving customers with
+            quality products, transparency and dependable after-sales support.
+        </p>
+
+        <div class="founder-quote">
+            <i class="fas fa-quote-left"></i>
+
+            <p>
+                "Our customers' trust is our greatest asset. We have always
+                believed in providing genuine products, honest advice and the
+                best service. That commitment will continue to guide us into
+                the future."
+            </p>
+
+            <h5>— Mr. Saleem</h5>
+        </div>
+
+    </div>
+
+    <!-- Right Features -->
+    <div class="founder-features">
+
+        <div class="feature-box">
+            <i class="fas fa-user-tie"></i>
+            <div>
+                <h4>Experience</h4>
+                <p>42 years of hands-on experience in heavy machinery.</p>
+            </div>
+        </div>
+
+        <div class="feature-box">
+            <i class="fas fa-chart-line"></i>
+            <div>
+                <h4>Performance</h4>
+                <p>Proven record of supplying quality machinery and spare parts.</p>
+            </div>
+        </div>
+
+        <div class="feature-box">
+            <i class="fas fa-hands-helping"></i>
+            <div>
+                <h4>Efforts</h4>
+                <p>Continuous hard work and dedication to meet customer needs.</p>
+            </div>
+        </div>
+
+        <div class="feature-box">
+            <i class="far fa-heart"></i>
+            <div>
+                <h4>Customer Affection</h4>
+                <p>A genuine affection for customers that goes beyond just business.</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="core-values">
+    <div class="section-title">
+        <span class="section-subtitle">OUR CORE VALUES</span>
+    </div>
+
+    <div class="values-grid">
+
+        <div class="value-card">
+            <i class="fas fa-handshake"></i>
+            <h4>Trust</h4>
+            <p>Building relationships with honesty, transparency and reliability.</p>
+        </div>
+
+        <div class="value-card">
+            <i class="fas fa-medal"></i>
+            <h4>Quality</h4>
+            <p>We provide only genuine and high quality machinery and parts.</p>
+        </div>
+
+        <div class="value-card">
+            <i class="fas fa-user-friends"></i>
+            <h4>Customer First</h4>
+            <p>Our customers are our priority; we are committed to their needs.</p>
+        </div>
+
+        <div class="value-card">
+            <i class="fas fa-trophy"></i>
+            <h4>Excellence</h4>
+            <p>We strive for excellence in products, service and support.</p>
+        </div>
+
+        <div class="value-card">
+            <i class="fas fa-thumbs-up"></i>
+            <h4>Commitment</h4>
+            <p>We are committed to a long lasting relationship with our clients.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="about-cta">
+    <div>
+        <h2>Looking for Used Machinery or Genuine Spare Parts?</h2>
+        <p>Contact us today for the best quality and service.</p>
+    </div>
+    <a href="contact.html" class="cta-btn">ENQUIRE NOW</a>
+</section>
+
+<footer class="footer">
+    <div class="footer-grid">
+        <div class="footer-box">
+            <div class="footer-logo">
+                <h2>SS TRADERS</h2>
+                <span>(SALEEM & SONS)</span>
+            </div>
+            <p>Dealers in all kinds of heavy machinery, spare parts, loaders, excavators, dozers and construction equipment.</p>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="spareparts.html">Spare Parts</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-box">
+            <h3>Our Products</h3>
+            <ul>
+                <li><a href="products.html">Excavators</a></li>
+                <li><a href="products.html">Dozers</a></li>
+                <li><a href="products.html">Loaders</a></li>
+                <li><a href="products.html">Used Machinery</a></li>
+                <li><a href="spareparts.html">Spare Parts</a></li>
+            </ul>
+        </div>
+        <div class="footer-box">
+            <h3>Contact Us</h3>
+            <ul class="footer-contact">
+                <li>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>D.No.54-11-10, Plot No.2, Phase-III, APIIC,<br>Autonagar, Vijayawada - 520007</span>
+                </li>
+                <li><i class="fas fa-phone"></i><span>90006 42345, 98481 25153</span></li>
+                <li><i class="fas fa-envelope"></i><span>sstradersvja@yahoo.com</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">© 2026 SS Traders (Saleem & Sons). All Rights Reserved.</div>
+</footer>
+
+<script src="js/navbar.js"></script>
+
+</body>
+</html>

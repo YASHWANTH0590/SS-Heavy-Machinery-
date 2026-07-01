@@ -1,0 +1,151 @@
+/* ============================================
+   SHARED NAVBAR — used on every page
+   Edit this ONE file to change the navbar everywhere.
+   ============================================ */
+
+.navbar{
+    height:85px;
+    background:#ffffff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 6%;
+    box-shadow:0 3px 14px rgba(2,35,72,.08);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+}
+.logo img{
+    height:58px;
+    width:auto;
+    display:block;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:34px;
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+.nav-links li{
+    position:relative;
+}
+.nav-links a{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    color:#1a2b4a;
+    text-decoration:none;
+    font-size:14px;
+    letter-spacing:.3px;
+    font-weight:700;
+    font-family:'Poppins', sans-serif;
+    text-transform:uppercase;
+    padding:6px 2px;
+    border-bottom:2px solid transparent;
+    transition:.25s;
+}
+.nav-links a i.fa-chevron-down{
+    font-size:10px;
+    margin-left:2px;
+}
+.nav-links a:hover{
+    color:#0B4A91;
+}
+.nav-links a.active{
+    color:#0B4A91;
+    border-bottom-color:#0B4A91;
+}
+
+.nav-buttons{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+.navbar .btn{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    background:#0B4A91;
+    color:#fff;
+    padding:13px 26px;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:14px;
+    font-family:'Poppins', sans-serif;
+    transition:.3s;
+    white-space:nowrap;
+}
+.navbar .btn i{
+    font-size:13px;
+}
+.navbar .btn:hover{
+    background:#08356A;
+}
+
+/* Menu toggle: hidden on desktop */
+.menu-toggle{
+    display:none;
+    color:#0B4A91;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* ── MOBILE ── */
+@media (max-width:768px){
+    .navbar{
+        height:70px;
+        padding:0 20px;
+        position:sticky;
+    }
+    .logo img{
+        height:42px;
+    }
+    .menu-toggle{
+        display:block;
+    }
+    .nav-links{
+        display:none;
+        flex-direction:column;
+        align-items:flex-start;
+        position:absolute;
+        top:70px;
+        left:0;
+        width:100%;
+        background:#ffffff;
+        gap:0;
+        padding:0;
+        margin:0;
+        box-shadow:0 10px 18px rgba(2,35,72,.1);
+    }
+    .nav-links.active{
+        display:flex;
+    }
+    .nav-links li{
+        border-bottom:1px solid #eef0f4;
+        width:100%;
+    }
+    .nav-links a{
+        display:flex;
+        width:100%;
+        padding:16px 20px;
+        border-bottom:none;
+    }
+    .nav-links a:hover,
+    .nav-links a.active{
+        background:#F5F8FC;
+        color:#0B4A91;
+    }
+    /* hide enquiry button on mobile, hamburger replaces it */
+    .nav-buttons{
+        display:none;
+    }
+}
