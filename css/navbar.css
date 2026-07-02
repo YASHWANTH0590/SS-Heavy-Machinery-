@@ -16,6 +16,11 @@
     z-index:1000;
 }
 
+.navbar,
+.btn {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
 .logo{
     display:flex;
     align-items:center;
